@@ -133,7 +133,7 @@ const isActiveRoute = computed(() => {
 		}
 	}
 
-	return false;
+	return active.value;
 });
 
 async function onClick(event: MouseEvent) {
@@ -306,6 +306,12 @@ async function onClick(event: MouseEvent) {
 		color: var(--v-button-color-hover, var(--foreground-inverted));
 		background-color: var(--v-button-background-color-hover, var(--theme--primary-accent));
 		border-color: var(--v-button-background-color-hover, var(--theme--primary-accent));
+	}
+
+	&.active {
+		color: var(--v-button-color-active, var(--v-button-color, var(--foreground-inverted)));
+		background-color: var(--v-button-background-color-active, var(--v-button-background-color, var(--theme--primary)));
+		border-color: var(--v-button-background-color-active, var(--v-button-background-color, var(--theme--primary)));
 	}
 }
 

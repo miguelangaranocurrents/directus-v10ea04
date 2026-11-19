@@ -44,3 +44,8 @@
 		fill: var(--tooltip-background-color);
 	}
 }
+
+/* The force-mounted tooltip stays in the DOM while closed; its popper wrapper must never intercept pointer events */
+[data-reka-popper-content-wrapper]:has(> .tooltip) {
+	pointer-events: none;
+}
